@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <!-- Adding app font via CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,20 +29,91 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <title>Mortgage Repayment Calculator</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <div class="container">
+    <div class="left">
+      <form action="">
+        <div class="header">
+          <h1>Mortgage Calculator</h1>
+          <button class="reset-btn">Clear All</button>
+        </div>
+
+        <div class="form-groups">
+          <div class="form-group erorr">
+            <label for="amount">Mortgage Amount</label>
+            <input type="text" id="amount">
+            <!-- <span error-msg>This field is required</span> -->
+          </div>
+
+          <div class="form-group">
+            <label for="term">Mortgage Term</label>
+            <input type="text" id="term">
+          </div>
+
+          <div class="form-group">
+            <label for="interest-rate">Interest Rate</label>
+            <input type="text" id="interest-rate">
+          </div>
+
+          <div class="form-group options">
+            <label>Mortgage Type</label>
+            <div class="option active">
+              <input type="text">
+              <span class="option-name">Repayment</span>
+            </div>
+
+            <div class="option">
+              <input type="text">
+              <span class="option-name">Interest Only</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="cta-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path fill="#133041"
+              d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z" />
+          </svg>
+          <span>Calculate Repayments</span>
+        </button>
+      </form>
+    </div>
+    <div class="right">
+      <!-- markup when form isn't submitted -->
+      <div class="result-pic">
+        <img src="images/illustration-empty.svg" alt="">
+      </div>
+      <h3 class="result-title">Results shown here</h3>
+      <p class="result-desc">
+        Complete the form and click “calculate repayments” to see what your monthly repayments would be.
+      </p>
+
+      <!-- markup when form is submitted -->
+      <!-- <h3 class="result-title">Your results</h3>
+      <p class="result-desc">
+        Your results are shown below based on the information you provided. To adjust the results, edit the form and
+        click
+        “calculate repayments” again.
+      </p>
+      <div class="result-card">
+        <h4 class="card-title">
+          Your monthly repayments
+        </h4>
+        <div class="card-monthly-price">
+          £1,797.74
+        </div>
+        <h4 class="card-title">Total you’ll repay over the term</h4>
+        <div class="card-total-price">£539,322.94</div>
+      </div> -->
+
+    </div>
+  </div>
+</body>
+
 </html>
