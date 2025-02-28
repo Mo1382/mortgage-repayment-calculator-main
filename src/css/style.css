@@ -170,10 +170,10 @@ body {
   border-color: #d7da2f;
   background-color: rgba(215, 218, 47, 0.25);
 }
-.container .left .form-groups .form-group.options .option input:checked + label .square {
+.container .left .form-groups .form-group.options .option input:checked + label .circle {
   border-color: #d7da2f;
 }
-.container .left .form-groups .form-group.options .option input:checked + label .square::after {
+.container .left .form-groups .form-group.options .option input:checked + label .circle::after {
   opacity: 1;
 }
 .container .left .form-groups .form-group.options .option label:not(:first-child) {
@@ -188,7 +188,7 @@ body {
   transition: border-color 0.3s ease;
   border: 1px solid #4e6e7e;
 }
-.container .left .form-groups .form-group.options .option label:not(:first-child) .square {
+.container .left .form-groups .form-group.options .option label:not(:first-child) .circle {
   width: 20px;
   height: 20px;
   border: 1px solid #4e6e7e;
@@ -198,7 +198,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.container .left .form-groups .form-group.options .option label:not(:first-child) .square::after {
+.container .left .form-groups .form-group.options .option label:not(:first-child) .circle::after {
   content: "";
   width: 10px;
   height: 10px;

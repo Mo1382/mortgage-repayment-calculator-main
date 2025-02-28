@@ -133,7 +133,7 @@ body {
               &:checked + label {
                 border-color: $p-lime;
                 background-color: rgba(215, 218, 47, 0.25);
-                .square {
+                .circle {
                   border-color: $p-lime;
                   &::after {
                     opacity: 1;
@@ -152,7 +152,7 @@ body {
               background-color: $n-white;
               transition: border-color 0.3s ease;
               border: 1px solid $n-slate-700;
-              .square {
+              .circle {
                 width: 20px;
                 height: 20px;
                 border: 1px solid $n-slate-700;
