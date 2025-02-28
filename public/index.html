@@ -35,7 +35,6 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-
   <div class="container">
     <div class="left">
       <form action="">
@@ -45,32 +44,53 @@
         </div>
 
         <div class="form-groups">
-          <div class="form-group erorr">
-            <label for="amount">Mortgage Amount</label>
-            <input type="text" id="amount">
-            <!-- <span error-msg>This field is required</span> -->
+          <div class="form-group error" id="amount">
+            <div>
+              <label for="amount">Mortgage Amount</label>
+              <input type="text">
+              <span class="input-add-on">£</span>
+            </div>
+            <span class="error-msg">This field is required</span>
           </div>
 
-          <div class="form-group">
-            <label for="term">Mortgage Term</label>
-            <input type="text" id="term">
-          </div>
+          <div class="row">
+            <div class="form-group half" id="term">
+              <div>
+                <label for="term">Mortgage Term</label>
+                <input type="text">
+                <span class="input-add-on">years</span>
+              </div>
+            </div>
 
-          <div class="form-group">
-            <label for="interest-rate">Interest Rate</label>
-            <input type="text" id="interest-rate">
+            <div class="form-group half error" id="interest-rate">
+              <div>
+                <label for="interest-rate">Interest Rate</label>
+                <input type="text">
+                <span class="input-add-on">%</span>
+              </div>
+              <span class="error-msg">This field is required</span>
+            </div>
           </div>
 
           <div class="form-group options">
-            <label>Mortgage Type</label>
-            <div class="option active">
-              <input type="text">
-              <span class="option-name">Repayment</span>
-            </div>
+            <div>
+              <label>Mortgage Type</label>
+              <div class="option">
+                <input type="radio" name="option" id="repayment">
+                <label for="repayment">
+                  <span class="square"></span>
+                  <span class="option-name">Repayment</span>
+                </label>
+              </div>
 
-            <div class="option">
-              <input type="text">
-              <span class="option-name">Interest Only</span>
+              <div class="option">
+                <input type="radio" name="option" id="interest">
+                <label for="interest">
+                  <span class="square"></span>
+                  <span class="option-name">Interest Only</span>
+                </label>
+              </div>
+              <span class="error-msg">This field is required</span>
             </div>
           </div>
         </div>
@@ -84,6 +104,7 @@
         </button>
       </form>
     </div>
+    <!-- <div class="right completed"> -->
     <div class="right">
       <!-- markup when form isn't submitted -->
       <div class="result-pic">

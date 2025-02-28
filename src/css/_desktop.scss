@@ -1,5 +1,291 @@
-html,
 body {
-  width: 100%;
-  height: 100%;
+  background-color: $n-slate-100;
+  @include flex-items-center;
+}
+
+.container {
+  display: flex;
+  background-color: $n-white;
+  border-radius: 24px;
+  max-width: 1008px;
+
+  .left,
+  .right {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .left {
+    background-color: transparent;
+    padding: 40px;
+    .header {
+      display: flex;
+      @include flex-items-sides;
+      margin-bottom: 44px;
+      h1 {
+        font-size: 24px;
+        font-weight: $bold-font-weight;
+        color: $n-slate-900;
+      }
+      .reset-btn {
+        cursor: pointer;
+        color: $n-slate-700;
+        font-size: 16px;
+        font-weight: $medium-font-weight;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: 7.5%; /* 1.2px */
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+      }
+    }
+    .form-groups {
+      .form-group {
+        > div {
+          position: relative;
+          > label {
+            color: $n-slate-700;
+            font-size: 16px;
+            font-weight: $medium-font-weight;
+            margin-bottom: 12px;
+            display: inline-block;
+            width: 100%;
+          }
+        }
+        position: relative;
+        input:not([type="radio"]) {
+          width: 100%;
+          color: $n-slate-900;
+          border-radius: 6px;
+          border: 1px solid $n-slate-700;
+          background-color: $n-white;
+          font-size: 18px;
+          height: 50px;
+          font-weight: $bold-font-weight;
+          transition: border-color 0.3s ease;
+          &:hover {
+            border-color: $n-slate-900;
+          }
+          &:focus {
+            border-color: $p-lime;
+            + .input-add-on {
+              background-color: $p-lime;
+              color: $n-slate-900;
+            }
+          }
+        }
+        .input-add-on {
+          position: absolute;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          // height: 48px;
+          height: 48.5px;
+          // bottom: 1px;
+          bottom: 0.5px;
+          font-size: 18px;
+          font-weight: $bold-font-weight;
+          color: $n-slate-700;
+          background-color: $n-slate-100;
+          @include flex-items-center;
+        }
+        &#amount {
+          input {
+            padding: 0 16px 0 calc(44px + 16px);
+          }
+          .input-add-on {
+            left: 1px;
+            width: 44px;
+            border-radius: 6px 0 0 6px;
+          }
+        }
+        &#term {
+          input {
+            padding: 0 calc(80px + 16px) 0 16px;
+          }
+          .input-add-on {
+            right: 1px;
+            // right: 0.5px;
+            width: 80px;
+            border-radius: 0 6px 6px 0;
+          }
+        }
+        &#interest-rate {
+          input {
+            padding: 0 calc(51px + 16px) 0 16px;
+          }
+          .input-add-on {
+            // right: 1px;
+            right: 0.5px;
+            width: 51px;
+            border-radius: 0 6px 6px 0;
+          }
+        }
+        &.options {
+          margin-bottom: 40px;
+          .option {
+            display: flex;
+            height: 50px;
+            width: 100%;
+            input {
+              opacity: 0;
+              width: 0;
+              height: 0;
+              &:checked + label {
+                border-color: $p-lime;
+                background-color: rgba(215, 218, 47, 0.25);
+                .square {
+                  border-color: $p-lime;
+                  &::after {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+            label:not(:first-child) {
+              width: 100%;
+              height: 100%;
+              border-radius: 6px;
+              display: flex;
+              align-items: center;
+              padding: 0 18px;
+              cursor: pointer;
+              background-color: $n-white;
+              transition: border-color 0.3s ease;
+              border: 1px solid $n-slate-700;
+              .square {
+                width: 20px;
+                height: 20px;
+                border: 1px solid $n-slate-700;
+                border-radius: 100%;
+                margin-right: 18px;
+                @include flex-items-center;
+                &::after {
+                  content: "";
+                  width: 10px;
+                  height: 10px;
+                  display: inline-block;
+                  border-radius: 100%;
+                  background-color: $p-lime;
+                  opacity: 0;
+                }
+              }
+              .option-name {
+                color: $n-slate-900;
+                font-size: 18px;
+                font-weight: $bold-font-weight;
+              }
+              &:hover {
+                border-color: #d7da2f;
+              }
+            }
+            &:first-of-type {
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .error-msg {
+          margin-top: 12px;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: $medium-font-weight;
+          color: $p-red;
+        }
+        &.error {
+          input {
+            border-color: $p-red !important;
+          }
+          .input-add-on {
+            background-color: $p-red !important;
+            color: $n-white !important;
+          }
+        }
+      }
+      .row {
+        display: flex;
+        margin: 26px 0 24px;
+        .half {
+          display: inline-block;
+          flex-basis: 50%;
+          &:first-child {
+            margin-right: 22px;
+          }
+        }
+      }
+    }
+    .cta-btn {
+      width: 316px;
+      cursor: pointer;
+      height: 56px;
+      border-radius: 31px;
+      background-color: $p-lime;
+      transition: background-color 0.3s ease;
+      @include flex-items-center;
+      span {
+        margin-left: 12px;
+        color: $n-slate-900;
+        font-size: 18px;
+        font-weight: $bold-font-weight;
+      }
+      &:hover {
+        background-color: #eaee94;
+      }
+    }
+  }
+  .right {
+    background-color: $n-slate-900;
+    border-radius: 0px 24px 24px 80px;
+    @include flex-items-center;
+    flex-direction: column;
+    padding: 40px;
+    .result-pic {
+      margin-bottom: 16px;
+    }
+    .result-title {
+      margin-bottom: 16px;
+      font-size: 24px;
+      font-weight: $bold-font-weight;
+      color: $n-white;
+    }
+    .result-desc {
+      color: $n-slate-300;
+      font-size: 16px;
+      font-weight: $medium-font-weight;
+      line-height: 24px; /* 150% */
+      text-align: center;
+    }
+    &.completed {
+      align-items: flex-start;
+      justify-content: flex-start;
+      .result-desc {
+        text-align: left;
+      }
+      .result-card {
+        margin-top: 40px;
+        width: 100%;
+        border-radius: 8px;
+        border-top: 4px solid $p-lime;
+        background-color: #0e2431;
+        padding: 32px;
+        .card-title {
+          font-size: 16px;
+          font-weight: $medium-font-weight;
+          color: $n-slate-300;
+          margin-bottom: 8px;
+        }
+        .card-monthly-price {
+          color: $p-lime;
+          font-size: 56px;
+          font-weight: $bold-font-weight;
+          margin-bottom: 32px;
+          padding-bottom: 32px;
+          border-bottom: 1px solid #4e6e7e;
+        }
+        .card-total-price {
+          color: $n-white;
+          font-size: 24px;
+          font-weight: $medium-font-weight;
+        }
+      }
+    }
+  }
 }
