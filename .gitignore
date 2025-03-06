@@ -28,3 +28,9 @@
 
 # Avoid accidental upload of the flowchart images designed in draw.io
 *.drawio.png
+
+# Avoid npm packages to be uploaded
+node_modules
+
+# Avoid accidental upload of the QuDo files
+.qudo
