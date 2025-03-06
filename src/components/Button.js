@@ -1,6 +1,6 @@
-export default function Button() {
+export default function Button({ onSubmit }) {
   return (
-    <button class="cta-btn">
+    <button class="cta-btn" onClick={onSubmit}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

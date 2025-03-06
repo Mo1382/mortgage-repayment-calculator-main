@@ -1,8 +1,10 @@
-export default function Header() {
+export default function Header({ onClearInputs }) {
   return (
     <div className="header">
       <h1>Mortgage Calculator</h1>
-      <button className="reset-btn">Clear All</button>
+      <button className="reset-btn" onClick={onClearInputs}>
+        Clear All
+      </button>
     </div>
   );
 }

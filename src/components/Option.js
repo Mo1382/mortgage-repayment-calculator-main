@@ -1,8 +1,8 @@
-export default function Option({ children, id }) {
+export default function Option({ isSelected, onSelected, children, id }) {
   return (
     <div className="option">
-      <input type="radio" name="option" id={id} />
-      <label for={id}>
+      <input checked={isSelected} type="radio" name="option" id={id} />
+      <label for={id} onClick={onSelected}>
         <span className="circle"></span>
         <span className="option-name">{children}</span>
       </label>
