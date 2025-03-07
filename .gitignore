@@ -1,3 +1,13 @@
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+
+# Avoid npm packages to be uploaded
+node_modules
+
 # Avoid accidental upload of the Sketch and Figma design files
 #####################################################
 ## Please do not remove lines 5 and 6 - thanks! 🙂 ##
@@ -29,8 +39,7 @@
 # Avoid accidental upload of the flowchart images designed in draw.io
 *.drawio.png
 
-# Avoid npm packages to be uploaded
-node_modules
+
 
 # Avoid accidental upload of the QuDo files
 .qudo/
