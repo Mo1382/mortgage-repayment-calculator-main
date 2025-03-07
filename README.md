@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Link](https://github.com/Mo1382/mortgage-repayment-calculator-main)
-- Live Site URL: [Link](https://fantastic-flan-2b80e1.netlify.app/)
+- Live Site URL: [Link](https://mortgage-repayment-calculator-main-mo.netlify.app/)
 
 ## My process
 
