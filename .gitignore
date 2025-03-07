@@ -30,7 +30,7 @@
 *.drawio.png
 
 # Avoid npm packages to be uploaded
-node_modules/
+node_modules
 
 # Avoid accidental upload of the QuDo files
 .qudo/
